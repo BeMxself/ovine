@@ -12,6 +12,7 @@
 @import './_antd_props';
 
 // lib core redefined
+
 :root {
   --Spinner-bg: #{$Spinner-bg};
   --DropDown-menuItem-onHover-bg: #eaf6fe;
@@ -21,10 +22,18 @@
   --body-bg: #fff;
   --Form-description-color: #999;
   --Form-select-borderRadius: 2px;
+  --DatePicker-iconColor: #666;
+  --Table-even-bg: rgb(250, 250, 250);
+  --Table-onHover-bg: rgb(243 248 255 / 73%);
+  --Table-thead-bg: #fafafa;
+  --Table-borderColor: #eceff8;
+  --borderColor: #eceff8;
+  --borderWidth: 0.5px;
+  --Table-thead-borderColor: #eceff8;
 }
 
 // site cxd theme scss
-@import './themes/_antd.scss';
+// @import './themes/_antd.scss';
 
 // amis lib scss
 @import '../_lib/_amis_components';

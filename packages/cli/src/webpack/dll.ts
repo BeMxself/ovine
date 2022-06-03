@@ -48,12 +48,13 @@ const dllModules = [
   'bootstrap/dist/css/bootstrap.css',
   'animate.css/animate.css',
   'font-awesome/css/font-awesome.css',
-  'react-datetime/css/react-datetime.css',
+  // 'react-datetime/css/react-datetime.css',
   'video-react/dist/video-react.css',
   'cropperjs/dist/cropper.css',
   'tinymce/skins/ui/oxide/skin.css',
   'froala-editor/css/froala_style.min.css',
   'froala-editor/css/froala_editor.pkgd.min.css',
+  'codemirror/lib/codemirror.css',
 ]
 
 function setDllVendorModules(config) {

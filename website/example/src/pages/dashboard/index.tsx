@@ -45,7 +45,7 @@ export const schema = {
     {
       type: 'tabs',
       mode: 'line',
-      className: 'tabs-card',
+      className: 'tabs-card r',
       tabs: [
         {
           title: '访问量',
@@ -132,7 +132,7 @@ export const schema = {
         actions: [],
         controls: [
           {
-            type: 'date-range',
+            type: 'input-date-range',
             label: '时间范围',
             name: 'dateRange',
             format: 'YYYY-MM-DD',
@@ -158,7 +158,7 @@ function renderTargetCards(cardInfos: any[]) {
     }
     return {
       type: 'wrapper',
-      className: 'target-card',
+      className: 'target-card r',
       ...gridProps,
       body: [
         {

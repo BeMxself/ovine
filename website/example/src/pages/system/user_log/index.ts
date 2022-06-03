@@ -1,3 +1,5 @@
+import { emptyListHolder } from '~/app/constants'
+
 import { ActionAddrCell, getActionAddrData } from './custom'
 
 export const schema = {
@@ -8,21 +10,24 @@ export const schema = {
     filter: '$preset.forms.filter',
     filterTogglable: true,
     perPageAvailable: [50, 100, 200],
+    perPage: 50,
     defaultParams: {
       size: 50,
     },
     perPageField: 'size',
     pageField: 'page',
+    placeholder: emptyListHolder,
+    autoFillHeight: true,
     headerToolbar: [
       'filter-toggler',
       {
         type: 'columns-toggler',
         align: 'left',
       },
-      {
-        type: 'pagination',
-        align: 'left',
-      },
+      // {
+      //   type: 'pagination',
+      //   align: 'left',
+      // },
     ],
     footerToolbar: ['statistics', 'switch-per-page', 'pagination'],
     columns: [
@@ -30,18 +35,21 @@ export const schema = {
         name: 'id',
         label: 'ID',
         type: 'text',
+        // groupName: '测试组1',
       },
       {
         name: 'createTime',
         label: '操作时间',
         type: 'datetime',
         width: 150,
+        // groupName: '测试组1',
       },
       {
         name: 'actionAddr',
         label: '操作路径',
         type: 'wrapper',
         component: ActionAddrCell,
+        // groupName: '测试组2',
       },
       {
         name: 'handlerId',
@@ -49,15 +57,18 @@ export const schema = {
         type: 'lib-renderer',
         renderer: 'sysUserInfoModal',
         userIdKey: 'handlerId',
+        // groupName: '测试组2',
       },
       {
         name: 'handlerName',
         label: '操作人名称',
         type: 'text',
+        // groupName: '测试组3',
       },
       {
         name: 'result',
         label: '操作结果',
+        // groupName: '测试组3',
         type: 'tpl',
         tpl: `
         <span>
@@ -71,6 +82,7 @@ export const schema = {
       {
         type: 'lib-blank',
         label: '操作内容',
+        // groupName: '测试组3',
         body: {
           $preset: 'actions.seeDetail',
         },
@@ -108,13 +120,13 @@ export const schema = {
           {
             type: 'datetime',
             name: 'startTime',
-            label: '开始时间',
+            label: '起止时间',
             format: 'YYYY-MM-DD HH:mm:ss',
           },
           {
             type: 'datetime',
             name: 'endTime',
-            label: '结束时间',
+            label: '-',
             format: 'YYYY-MM-DD HH:mm:ss',
           },
           {
@@ -130,7 +142,7 @@ export const schema = {
             name: 'handlerFilter',
             label: '操作人',
             clearable: true,
-            placeholder: '输入操作人ID/名称',
+            placeholder: '请输入',
           },
           {
             type: 'select',

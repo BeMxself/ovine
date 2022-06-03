@@ -2,7 +2,10 @@
  * APP 权限设置模块
  */
 
-import { Tab, Tabs, Tree, toast } from 'amis'
+import { toast } from 'amis'
+import Tabs, { Tab } from 'amis/lib/components/Tabs'
+import TreeSelector from 'amis/lib/components/Tree'
+
 import { RendererProps } from 'amis/lib/factory'
 import { eachTree, mapTree, flattenTree } from 'amis/lib/utils/helper'
 import { map, omitBy } from 'lodash'
@@ -207,7 +210,7 @@ const LimitSetting = (props: LimitSettingProps) => {
 
   return (
     <StyledLimit className={className}>
-      <div className="action-btns">
+      <div className="action-btns m-b-md">
         {render ? render('body', buttonsSchema) : <Amis schema={buttonsSchema} />}
       </div>
       <Tabs activeKey={activeTab} mode="line" onSelect={onTabSelect}>
@@ -223,7 +226,8 @@ const LimitSetting = (props: LimitSettingProps) => {
                 icon={item.icon}
                 eventKey={index}
               >
-                <Tree
+                {/** @ts-ignore */}
+                <TreeSelector
                   key={`${isUnfolded}`}
                   hideRoot
                   multiple

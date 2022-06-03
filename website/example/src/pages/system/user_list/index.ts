@@ -1,5 +1,7 @@
 import { mapTree } from 'amis/lib/utils/helper'
 
+import { emptyListHolder } from '~/app/constants'
+
 export const schema = {
   type: 'page',
   body: {
@@ -10,6 +12,8 @@ export const schema = {
     perPageField: 'size',
     pageField: 'page',
     perPageAvailable: [50, 100, 200],
+    placeholder: emptyListHolder,
+    autoFillHeight: true,
     defaultParams: {
       size: 50,
     },
@@ -53,6 +57,8 @@ export const schema = {
       {
         name: 'avatar',
         label: '头像',
+        // type: 'image',
+        // enlargeAble: true,
         type: 'tpl',
         tpl: '<img style="width:30px;" src="${avatar}" />',
         popOver: {
@@ -84,6 +90,11 @@ export const schema = {
         type: 'datetime',
         width: 150,
       },
+      // {
+      //   type: 'image',
+      //   src: 'https://img-photo.sumeme.com/54/6/104622454_1323_1323_$id.jpg?id=$id',
+      //   enlargeAble: true,
+      // },
       {
         type: 'operation',
         label: '操作',
@@ -193,7 +204,7 @@ export const schema = {
             name: 'filter',
             label: '关键字',
             clearable: true,
-            placeholder: 'ID/登录账号/名称',
+            placeholder: '请输入',
           },
           {
             $ref: 'sysRoleIdPicker',

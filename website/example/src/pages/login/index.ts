@@ -23,7 +23,7 @@ export const schema = {
     },
     {
       type: 'wrapper',
-      className: 'login-wrapper b',
+      className: 'login-wrapper b r',
       body: [
         {
           type: 'html',
@@ -49,7 +49,6 @@ export const schema = {
         },
         onSuccess: (source) => {
           const { code, msg, data } = source
-
           if (code === 0) {
             setStore(storeKeys.auth, data)
             source.msg = '您已登录登录本系统'
@@ -119,7 +118,7 @@ export const schema = {
             type: 'group',
             label: ' ',
             gap: 'sm',
-            inputClassName: 'justify-content-between',
+            inputClassName: 'justify-content-between align-items-center',
             controls: [
               {
                 type: 'checkbox',
@@ -128,7 +127,6 @@ export const schema = {
                 value: true,
                 mode: 'inline',
                 className: 'inline',
-                inputClassName: 'p-t-none',
               },
               {
                 type: 'button',
@@ -146,6 +144,7 @@ export const schema = {
             type: 'submit',
             level: 'primary',
             label: '登录',
+            size: 'lg',
             inputClassName: 'w-full',
             horizontal: {
               left: 'col-sm-2',

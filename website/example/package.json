@@ -1,6 +1,6 @@
 {
   "name": "@ovine/example",
-  "version": "0.1.5",
+  "version": "0.1.7-alpha.2",
   "description": "your awesome project.",
   "private": true,
   "workspaces": {
@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "gen:static": "node-sass -v && yarn scss && yarn dll",
+    "gen:static": "yarn scss && yarn dll",
     "start": "ovine dev --mock",
     "dev:lib": "yarn rm:lib && export DEV_LIB=true && ovine dev --no-dll --mock --host=0.0.0.0",
     "build:test": "yarn run eslint && ovine build --mock",
@@ -54,8 +54,8 @@
     "@types/react": "^16.8.6",
     "@types/react-router-dom": "^5.1.0",
     "@types/styled-components": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "~4.10.0",
-    "@typescript-eslint/parser": "~4.10.0",
+    "@typescript-eslint/eslint-plugin": "~5.16.0",
+    "@typescript-eslint/parser": "~5.16.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.7.0",

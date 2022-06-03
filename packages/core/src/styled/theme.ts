@@ -25,6 +25,7 @@ export const dispatchLink = (theme: string, callback?: () => void) => {
     onLoad: callback,
     href: require(`@generated/styles/themes/${theme}.css`),
   }
+
   $('<link/>', linkAttr).appendTo('head')
 }
 
@@ -41,13 +42,13 @@ export const changeAppTheme = (theme: string) => {
 }
 
 export const initAppTheme = () => {
-  const theme = getStore<string>(storage.appTheme) || 'default'
+  const theme = getStore<string>(storage.appTheme) || 'cxd'
   if ((window as any).IS_SCSS_UPDATE) {
     dispatchLink(theme)
   }
   // 非amis主题 都需要注册
   Object.values(app.theme.getAllThemes())
-    .filter((item: DefaultTheme) => !/cxd|default|dark/.test(item.name))
+    .filter((item: DefaultTheme) => !/ang|cxd|antd|dark/.test(item.name))
     .forEach((item: DefaultTheme) => {
       setAmisTheme(item.name, {
         classPrefix: item.ns,

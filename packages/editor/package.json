@@ -1,6 +1,6 @@
 {
   "name": "@ovine/editor",
-  "version": "0.1.5",
+  "version": "0.1.7-alpha.2",
   "description": "Ovine json editor.",
   "private": false,
   "publishConfig": {
@@ -41,6 +41,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "dependencies": {
+    "@webcomponents/webcomponentsjs": "2.6.0",
     "deep-diff": "1.0.2",
     "json-ast-comments": "^1.0.4"
   },

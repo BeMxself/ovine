@@ -21,7 +21,7 @@ export const schema = {
     },
   },{
     type: 'wrapper',
-    className: 'login-wrapper b',
+    className: 'login-wrapper b r',
     body: [
       {
         type: 'html',
@@ -53,7 +53,7 @@ export const schema = {
             clearStore(storeKeys.auth)
             source.msg = msg || '登录异常'
           }
-          return source
+          return { data: source }
         },
       },
     },
@@ -115,7 +115,7 @@ export const schema = {
             type: 'group',
             label: ' ',
             gap: 'sm',
-            inputClassName: 'justify-content-between',
+            inputClassName: 'justify-content-between align-items-center',
             controls: [
               {
                 type: 'checkbox',
@@ -140,6 +140,7 @@ export const schema = {
           },
           {
             type: 'submit',
+            size: 'lg',
             level: 'primary',
             label: '登录',
             inputClassName: 'w-full',

@@ -41,8 +41,15 @@
     }
   }
 }
+
 .#{$ns}Layout {
   &-brand {
     height: var(--Layout-header-height);
   }
 }
+
+
+.#{$ns}Table-table > tbody > tr + tr {
+  background: var(--Table-even-bg);
+}
+

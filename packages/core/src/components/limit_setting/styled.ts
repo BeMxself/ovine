@@ -4,15 +4,28 @@ export const StyledLimit = styled.div`
   ${({ theme: { ns } }) => css`
     .${ns}Tree {
       &-itemLabel {
-        padding-left: 0 !important;
+        margin-bottom: 10px;
+
         &:hover {
           background: transparent;
+          &:after {
+            background: transparent;
+          }
         }
       }
-      &-item--isLeaf {
-        display: inline-block;
-        & > .${ns}Tree-itemLabel {
-          margin-right: 10px;
+
+      &-item {
+        .is-checked {
+          background-color: transparent;
+        }
+        &--isLeaf {
+          display: inline-block;
+          & > .${ns}Tree-itemLabel {
+            margin-right: 10px;
+          }
+          .${ns}Tree-itemArrowPlaceholder {
+            display: none;
+          }
         }
       }
       &-list {
@@ -21,7 +34,7 @@ export const StyledLimit = styled.div`
         }
       }
       &-sublist {
-        margin-left: 20px;
+        margin-left: 26px;
       }
       &-item-icons {
         display: none;
@@ -51,8 +64,4 @@ export const StyledLimit = styled.div`
       }
     }
   `}
-
-  .action-btns {
-    margin-bottom: 5px;
-  }
 `
