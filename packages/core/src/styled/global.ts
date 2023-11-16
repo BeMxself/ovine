@@ -45,6 +45,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .hidden {
+    display: none;
+  }
+
   svg.icon.icon-clock {
     top: 0;
   }
@@ -83,6 +87,10 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+  .antd-Select .antd-PopOver.antd-Select-popover .antd-Select-menu .antd-Select-option {
+    padding: 6px;
+  }
+
   /** amis 兼容  */
   ${({ theme: { ns } }) => css`
     .line-break-json {
@@ -92,6 +100,16 @@ const GlobalStyle = createGlobalStyle`
           white-space: normal;
           word-break: all;
         }
+      }
+    }
+
+    .${ns}Select {
+      &-option > label {
+        white-space: nowrap;
+      }
+      &-popover {
+        width: auto !important;
+        min-width: 8rem;
       }
     }
 
@@ -156,14 +174,6 @@ const GlobalStyle = createGlobalStyle`
     .${ns}ExcelControl-dropzone {
       & > p {
         margin: 1rem auto;
-      }
-    }
-    /** 1.9.0 */
-    .${ns}DateRangePicker {
-      .${ns}DateRangePicker-input {
-        &.isActive {
-          border-bottom: 0px;
-        }
       }
     }
 
